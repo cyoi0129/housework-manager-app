@@ -113,9 +113,9 @@ SITE_ID = 1 # For rest auth
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # For rest auth
 
 # For Cross Origin API Call
-# CORS_ALLOW_ALL_ORIGINS = True # Allow all origins
+CORS_ALLOW_ALL_ORIGINS = True # Allow all origins
 CORS_ALLOW_CREDENTIALS = True # Allow all origins
-CORS_ALLOWED_ORIGINS = ['https://housework-manager-react.web.app/']
+# CORS_ALLOWED_ORIGINS = ['https://housework-manager-react.web.app/']
 
 try:
     from .local_settings import *
