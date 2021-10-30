@@ -49,7 +49,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'web/build'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -111,7 +111,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = '/static/'
+STATIC_URL = '/web/build/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -126,7 +126,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # For rest auth
 # For Cross Origin API Call
 CORS_ALLOW_ALL_ORIGINS = True # Allow all origins
 CORS_ALLOW_CREDENTIALS = True # Allow all origins
-# CORS_ALLOWED_ORIGINS = ['https://housework-manager-react.web.app/']
+# CORS_ALLOWED_ORIGINS = ['']
 
 try:
     from .local_settings import *
@@ -141,6 +141,6 @@ if not DEBUG:
 db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES['default'].update(db_from_env)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "web/build"),
+)
