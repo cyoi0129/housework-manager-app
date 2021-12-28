@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class Master(models.Model):
     TYPE_COOK = "cook"
     TYPE_DELIVERY = "delivery"
-    TYPE_LAUNDRY = "‎laundry"
+    TYPE_LAUNDRY = "laundry"
     TYPE_WASH = "wash"
     TYPE_BATH = "bath"
     TYPE_SLEEP = "sleep"
@@ -15,7 +15,7 @@ class Master(models.Model):
     TYPE_SET = (
       (TYPE_COOK, "Cook"),
       (TYPE_DELIVERY, "Delivery"),
-      (TYPE_LAUNDRY, "‎Laundry"),
+      (TYPE_LAUNDRY, "Laundry"),
       (TYPE_WASH, "Wash"),
       (TYPE_BATH, "Bath"),
       (TYPE_SLEEP, "Sleep"),
